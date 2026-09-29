@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffeef2;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container { text-align: center; cursor: pointer; }
+
+        /* Page 1: Gift Box */
+        #gift-page { font-size: 100px; transition: transform 0.3s; }
+        #gift-page:hover { transform: scale(1.1); }
+
+        /* Page 2: Big Heart */
+        #heart-page { display: none; }
+        #heart-page img { width: 300px; animation: pulse 1.5s infinite; }
+
+        /* Page 3: Final Card */
+        #final-card { 
+            display: none; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 350px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .photo-grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="gift-page" class="container" onclick="showHeart()">
+        <div>🎁</div>
+        <p style="font-size: 18px; color: #ff477e;">Tap the gift!</p>
+    </div>
+
+    <div id="heart-page" class="container" onclick="showCard()">
+        <img src="j.jpeg" alt="Sparkly Heart">
+        <p style="font-size: 18px; color: #ff477e;">Click the heart!</p>
+    </div>
+
+    <div id="final-card" class="container">
+        <h1 style="color: #ff477e;">Happy Birthday! 🎉</h1>
+<h3 style="color: #ff477e;"Iam>Uvaiizur Rahman i wiching my panda yusra batool  🎉</h3>
+        <p>You deserve all the happiness today!</p>
+        
+        <div class="photo-grid">
+            <img src="s1.jpeg" alt="Photo 1">
+            <img src="WhatsApp Image 2026-09-29 at 11.24.43 PM.jpeg" alt="Photo 2">
+            <img src="s2.jpeg">
+            <img src="WhatsApp Image 2026-09-29 at 11.24.38 PM.jpeg" alt="Photo 4">
+        </div>
+        <br>
+        <button onclick="location.reload()" style="padding: 10px; border-radius: 10px; border: none; background: #ff477e; color: white;">Restart</button>
+    </div>
+
+    <script>
+        // JS: Logic to switch between sections
+        function showHeart() {
+            document.getElementById('gift-page').style.display = 'none';
+            document.getElementById('heart-page').style.display = 'block';
+        }
+
+        function showCard() {
+            document.getElementById('heart-page').style.display = 'none';
+            document.getElementById('final-card').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
